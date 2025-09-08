@@ -1,3 +1,116 @@
+/* App Navigation Styles */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand i {
+  font-size: 2rem;
+  color: #ffd700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 12px 20px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.nav-btn.active {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.nav-btn i {
+  font-size: 1.1rem;
+}
+
+.app-main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .app-navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-btn span {
+    display: none;
+  }
+}
+
+/* Legacy App Styles (Keep for compatibility) */
 .App {
   text-align: center;
 }

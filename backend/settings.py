@@ -138,3 +138,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+
+# CSRF Trusted Origins (Django 4.0+)
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+# For development, you can also disable CSRF for API endpoints
+# (Already handled in views.py with @csrf_exempt)

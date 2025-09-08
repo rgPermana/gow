@@ -1,0 +1,115 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6191, -6.9175]
+      },
+      "properties": {
+        "name": "Bandung",
+        "description": "Kota Kembang di Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.4203, -7.7956]
+      },
+      "properties": {
+        "name": "Yogyakarta",
+        "description": "Daerah Istimewa Yogyakarta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [113.9213, -8.2280]
+      },
+      "properties": {
+        "name": "Banyuwangi",
+        "description": "Kota di ujung timur Jawa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.1167, -8.6500]
+      },
+      "properties": {
+        "name": "Mataram",
+        "description": "Ibu kota Nusa Tenggara Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [123.6044, -10.1718]
+      },
+      "properties": {
+        "name": "Kupang",
+        "description": "Ibu kota Nusa Tenggara Timur"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [119.4327, -5.1477]
+      },
+      "properties": {
+        "name": "Makassar",
+        "description": "Kota terbesar di Sulawesi Selatan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [140.7167, -2.5333]
+      },
+      "properties": {
+        "name": "Jayapura",
+        "description": "Ibu kota Papua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [117.1611, -0.5017]
+      },
+      "properties": {
+        "name": "Samarinda",
+        "description": "Ibu kota Kalimantan Timur"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [114.5906, -3.3194]
+      },
+      "properties": {
+        "name": "Banjarmasin",
+        "description": "Kota Seribu Sungai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [109.3333, -7.4167]
+      },
+      "properties": {
+        "name": "Purwokerto",
+        "description": "Kota di Jawa Tengah"
+      }
+    }
+  ]
+}
