@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DataForm from '../components/DataForm';
 import Map from '../components/Map';
 import Sidebar from '../components/Sidebar';
-import { fetchSpatialData, createSpatialData, updateSpatialData, deleteSpatialData } from '../services/api';
+import { getSpatialData, createSpatialData, updateSpatialData, deleteSpatialData } from '../services/api';
 import '../components/CRUD.css';
 import '../components/Sidebar.css';
 
@@ -12,6 +12,7 @@ const Home = () => {
     const [showForm, setShowForm] = useState(false);
     const [editingData, setEditingData] = useState(null);
     const [selectedData, setSelectedData] = useState(null);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
     const [isAddMode, setIsAddMode] = useState(false);
     const [tempCoordinates, setTempCoordinates] = useState(null);
 
@@ -22,8 +23,8 @@ const Home = () => {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await fetchSpatialData();
-            setData(data);
+            const response = await getSpatialData();
+            setData(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
             alert('Failed to fetch data');
@@ -118,27 +119,20 @@ const Home = () => {
         setSelectedData(item);
     };
 
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
+
     if (loading) {
         return <div className="loading">Loading...</div>;
     }
 
     return (
         <div className="home-container">
-            {/* Navbar */}
-            <div className="navbar">
-                <h1>GIS Application</h1>
-                <div className="navbar-info">
-                    {selectedData && (
-                        <div className="selected-info">
-                            <i className="fas fa-eye"></i>
-                            Viewing: {selectedData.name}
-                        </div>
-                    )}
-                </div>
-            </div>
-
-            {/* Sidebar - Fixed */}
+            {/* Sidebar */}
             <Sidebar
+                isOpen={sidebarOpen}
+                onToggle={toggleSidebar}
                 data={data}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
@@ -148,7 +142,7 @@ const Home = () => {
             />
 
             {/* Main Content - Map */}
-            <div className="main-content-with-sidebar">
+            <div className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
                 <div className="map-wrapper">
                     {/* Map Controls */}
                     <div className="map-controls">
@@ -172,6 +166,15 @@ const Home = () => {
                                 </button>
                             )}
                         </div>
+                        
+                        <div className="map-info">
+                            {selectedData && (
+                                <div className="selected-info">
+                                    <i className="fas fa-eye"></i>
+                                    Viewing: {selectedData.name}
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     {/* Map Component */}
@@ -189,11 +192,10 @@ const Home = () => {
             {/* Form Modal */}
             {showForm && (
                 <DataForm
-                    selectedData={editingData}
-                    onSave={handleSubmit}
+                    data={editingData}
+                    onSubmit={handleSubmit}
                     onCancel={handleCloseForm}
                     tempCoordinates={tempCoordinates}
-                    isEditing={!!editingData}
                 />
             )}
         </div>
